@@ -5,10 +5,6 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 {
     public static NetworkManager instance;
 
-    private void Start()
-    {
-        PhotonNetwork.ConnectUsingSettings();
-    }
     private void Awake()
     {
         // if an instance already exists and it's not this one - destroy us
@@ -20,6 +16,11 @@ public class NetworkManager : MonoBehaviourPunCallbacks
             instance = this;
             DontDestroyOnLoad(gameObject);
         }
+    }
+
+    private void Start()
+    {
+        PhotonNetwork.ConnectUsingSettings();
     }
 
     // attemp to create a new room

@@ -93,6 +93,7 @@ public class PlayerController : MonoBehaviourPunCallbacks, IPunObservable
         // Did we hit another player?
         if (collision.gameObject.CompareTag("Player"))
         {
+            Debug.Log("I'm working!");
             // Do they have the hat?
             if (GameManager.instance.GetPlayer(collision.gameObject).id == GameManager.instance.playerWithHat)
             {
